@@ -23,9 +23,9 @@ const createIssues = (issues) => {
   for (var i = 0; i < issues.length; i++) {
     let issue = issues[i];
     let previousUpdate= getSection(issue);
-    let today = `${moment().month()}/${moment().day()}`;
+    let today = `${moment().month() + 1}/${moment().date()}`;
     let endOfWeek = moment().add(5, 'days');
-    let endOfWeekString = `${endOfWeek.month()}/${endOfWeek.day()}`;
+    let endOfWeekString = `${endOfWeek.month() + 1}/${endOfWeek.date()}`;
   const newUpdate = `
 # Update for @${issue.user} for ${today}-${endOfWeekString}
 
