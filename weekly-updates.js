@@ -12,9 +12,7 @@ const getIssues = () => {
   return issueMarkdowns;
 };
 
-const getSection = (issue) => {
-
-};
+const getSection = (issue) => issue.split('## Tasks for this week')[1];
 
 const closeIssues = (issues) => {
   // TODO: implement this lol
@@ -26,7 +24,9 @@ const createIssues = (issues) => {
 
 const main = () => {
   let issues = getIssues();
-  console.log(issues);
+  let sections = issues.map(getSection);
+
+  console.log(sections);
 };
 
 main();
